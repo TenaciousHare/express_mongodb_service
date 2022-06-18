@@ -3,7 +3,7 @@ const router = express.Router();
 
 /* GET home page. */
 router.get('/', (req, res) => {
-  res.render('index', { title: 'Serwis Express + MongoDB' });
+  res.render('news', { title: 'News' });
 });
 
 module.exports = router;
