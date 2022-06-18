@@ -2,10 +2,16 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  --black-olive: #423e37ff;
+  --maximum-yellow-red: #e3b23cff;
+  --eggshell: #edebd7ff;
+  --spanish-gray: #a39594ff;
+  --granite-gray: #6e675fff;
 }
 
 body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: #A39594;
 }
 
 ul {
@@ -15,8 +21,7 @@ ul {
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  background-color: black;
-  border-radius: 5px;
+  background-color: #423E37;
 }
 
 li{
@@ -28,12 +33,12 @@ a {
   text-decoration: none;
   text-transform: uppercase;
   font-weight: bold;
-  color: rgb(234, 234, 234);
+  color: #EDEBD7;
 }
 
 a.active {
-  color: yellow;
-  border-bottom: 3px solid yellow;
+  color: #E3B23C;
+  border-bottom: 3px solid #E3B23C;
 
 }
 
@@ -43,4 +48,41 @@ div.wrapper{
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
+}
+
+form{
+  padding: 10px;
+ 
+}
+p{
+  display: flex;
+  flex-direction: column;
+}
+input{
+  width: 200px;
+  margin: 5px;
+  padding: 10px;
+  border: none;
+
+  background-color: #EDEBD7;
+  border-radius: 5px;
+}
+input:focus{
+  outline: none;
+  box-shadow: 0px 0px 2px #EDEBD7;
+}
+
+textarea{
+  width: 200px;
+  height: 150px;
+  margin: 5px;
+  padding: 10px;
+  resize: none;
+  border: none;
+  background-color: #EDEBD7;
+  border-radius: 5px;
+}
+textarea:focus{
+  outline: none;
+  box-shadow: 0px 0px 2px #EDEBD7;
 }

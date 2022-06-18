@@ -1,0 +1,22 @@
+extends ../layout
+
+block content
+  div(class="wrapper")
+    h1= title
+    nav
+      ul 
+        li 
+          a(href='/admin/news/add') dodaj
+    table 
+      tr 
+        th id 
+        th tytuł
+        th data dodania
+        th akcja 
+      each item, index in data
+        tr 
+          td=index 
+          td=item.title 
+          td=item.created
+          td 
+            a(href=`/admin/news/delete/${item._id}`) usuń

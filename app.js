@@ -1,8 +1,17 @@
 const createError = require('http-errors');
-const express = require('express');
-const path = require('path');
 const cookieParser = require('cookie-parser');
+const express = require('express');
+const cookieSession = require('cookie-session');
+const path = require('path');
 const logger = require('morgan');
+const config = require('./config');
+const mongoose = require('mongoose');
+
+mongoose.connect(config.db, {useNewUrlParser: true});
+
+const db = mongoose.connection;
+db.on('error', console.error.bind(console, 'connection error:'));
+
 
 const indexRouter = require('./routes/index');
 const newsRouter = require('./routes/news');
@@ -21,6 +30,12 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.use(cookieSession({
+  name: 'session',
+  keys: config.keySession,
+  maxAge: config.maxAgeSession,
+}))
+
 app.use((req, res, next) => {
   res.locals.path = req.path;
   next();
@@ -30,6 +45,7 @@ app.use('/', indexRouter);
 app.use('/news', newsRouter);
 app.use('/quiz', quizRouter);
 app.use('/admin', adminRouter);
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
