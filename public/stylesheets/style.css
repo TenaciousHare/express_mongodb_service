@@ -44,6 +44,7 @@ a.active {
 
 div.wrapper{
   display: flex;
+  margin: 5px;
   padding: 50px;
   flex-direction: column;
   justify-content: center;
@@ -60,10 +61,9 @@ p{
 }
 input{
   width: 200px;
-  margin: 5px;
   padding: 10px;
   border: none;
-
+  margin: 0 5px 10px 0;
   background-color: #EDEBD7;
   border-radius: 5px;
 }

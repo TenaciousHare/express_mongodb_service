@@ -1,6 +1,15 @@
 extends layout
 
 block content
-  div(class="wrapper")
+  div(class="news wrapper")
     h1= title
-    p Welcome to #{title}
+    form(method='get')
+      input(type='text' name='search' value=search placeholder='wyszukaj artykuł')
+      input(type='submit' value='szukaj')
+    
+    each item in data
+      article
+        h1=item.title
+        p
+          i=item.created.toLocaleString()
+        p=item.description
