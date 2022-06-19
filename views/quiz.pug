@@ -3,4 +3,20 @@ extends layout
 block content
   div(class="wrapper")
     h1= title
-    p Welcome to #{title}
+    if show
+      form(method='post')
+        p Jaka jest Twoja ulubiona pora roku?
+        ul(class="quiz")
+          each item in data
+            li 
+              label=item.title 
+              input(type='radio' name='quiz' value=item._id)
+        input(type="submit" value="zagłosuj")
+        p Aby zobaczyć wyniki oddaj głos!
+    else 
+      h2 Już zagłosowałeś w ankiecie!
+      p Wyniki:
+      ul(class="quiz")
+        each item in data
+          li #{item.title} głosów: #{item.vote} (#{Math.round(item.vote/sum * 100)}%)
+      p Ilość oddanych głosów: #{sum}

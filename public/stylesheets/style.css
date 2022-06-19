@@ -2,16 +2,16 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  --black-olive: #423e37ff;
-  --maximum-yellow-red: #e3b23cff;
-  --eggshell: #edebd7ff;
-  --spanish-gray: #a39594ff;
-  --granite-gray: #6e675fff;
+  --dark: #0A2E36;
+  --light: #FCF8ED;
+  --primary: #e3b23c;
+  --secondary: #8B80F9;
+  
 }
 
 body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  background-color: #A39594;
+  background-color: var(--secondary);
 }
 
 ul {
@@ -19,27 +19,66 @@ ul {
   width: 100%;
   padding: 20px;
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   align-items: center;
-  background-color: #423E37;
+}
+
+ul.add{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  width: 200px;
+  padding: 10px;
+  border: none;
+  margin: 0 5px 10px 0;
+  background-color: var(--light);
+  border-radius: 5px;
+}
+
+ul.quiz{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
 }
 
 li{
-  flex-basis: 20%;
+  margin: 0 10px;
+}
+
+ul.quiz li {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+ul.quiz input, ul.quiz label {
+  height: auto;
+  width: 50px;
+  margin: 5px;
 }
 
 a {
-  padding: 2px;
+  padding: 10px;
   text-decoration: none;
   text-transform: uppercase;
-  font-weight: bold;
-  color: #EDEBD7;
+  color: var(--light);
+  background-color: var(--dark);
+  border-radius: 5px;
 }
 
 a.active {
-  color: #E3B23C;
-  border-bottom: 3px solid #E3B23C;
+  background-color: var(--primary);
+  color: var(--dark);
+ 
+}
+a.delete{
+  background-color: transparent;
+}
 
+ul.add a {
+  background-color: transparent;
+  text-transform: lowercase;
+  color: var(--dark);
 }
 
 div.wrapper{
@@ -64,12 +103,12 @@ input{
   padding: 10px;
   border: none;
   margin: 0 5px 10px 0;
-  background-color: #EDEBD7;
+  background-color: var(--light);
   border-radius: 5px;
 }
 input:focus{
   outline: none;
-  box-shadow: 0px 0px 2px #EDEBD7;
+  box-shadow: 0px 0px 2px var(--light);
 }
 
 textarea{
@@ -79,10 +118,10 @@ textarea{
   padding: 10px;
   resize: none;
   border: none;
-  background-color: #EDEBD7;
+  background-color: var(--light);
   border-radius: 5px;
 }
 textarea:focus{
   outline: none;
-  box-shadow: 0px 0px 2px #EDEBD7;
+  box-shadow: 0px 0px 2px var(--light);
 }

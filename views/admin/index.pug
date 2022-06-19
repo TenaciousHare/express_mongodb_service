@@ -4,9 +4,9 @@ block content
   div(class="wrapper")
     h1= title
     nav
-      ul 
+      ul(class="add")
         li 
-          a(href='/admin/news/add') dodaj
+          a( href='/admin/news/add') dodaj
     table 
       tr 
         th id 
@@ -20,4 +20,4 @@ block content
           td
             i=item.created.toLocaleString()
           td 
-            a(href=`/admin/news/delete/${item._id}`) usuń
+            a( class='delete' href=`/admin/news/delete/${item._id}`) usuń
